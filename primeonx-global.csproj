@@ -1,0 +1,871 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15B0CB04-67A5-454A-A1E9-44636419C1BC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>primeonx_global</RootNamespace>
+    <AssemblyName>primeonx-global</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44335</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="assets\css\plugins\aos.css" />
+    <Content Include="assets\css\plugins\fontawesome.css" />
+    <Content Include="assets\css\plugins\hover-revel.css" />
+    <Content Include="assets\css\plugins\magnifying-popup.css" />
+    <Content Include="assets\css\plugins\metismenu.css" />
+    <Content Include="assets\css\plugins\odometer.css" />
+    <Content Include="assets\css\plugins\plugins.css" />
+    <Content Include="assets\css\plugins\swiper.css" />
+    <Content Include="assets\css\plugins\timepickers.min.css" />
+    <Content Include="assets\css\plugins\unicons.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\vendor\animate.css" />
+    <Content Include="assets\css\vendor\bootstrap.min.css" />
+    <Content Include="assets\fonts\fa-brands-400.svg" />
+    <Content Include="assets\fonts\fa-duotone-900.svg" />
+    <Content Include="assets\fonts\fa-light-300.svg" />
+    <Content Include="assets\fonts\fa-regular-400.svg" />
+    <Content Include="assets\fonts\fa-solid-900.svg" />
+    <Content Include="assets\images\about\01.png" />
+    <Content Include="assets\images\about\01.svg" />
+    <Content Include="assets\images\about\02.png" />
+    <Content Include="assets\images\about\02.svg" />
+    <Content Include="assets\images\about\03.png" />
+    <Content Include="assets\images\about\04.png" />
+    <Content Include="assets\images\about\09.svg" />
+    <Content Include="assets\images\about\avatar.png" />
+    <Content Include="assets\images\about\icons\01.svg" />
+    <Content Include="assets\images\about\icons\02.svg" />
+    <Content Include="assets\images\about\icons\03.svg" />
+    <Content Include="assets\images\about\icons\04.svg" />
+    <Content Include="assets\images\about\icons\05.svg" />
+    <Content Include="assets\images\about\icons\06.svg" />
+    <Content Include="assets\images\about\icons\07.svg" />
+    <Content Include="assets\images\about\icons\08.svg" />
+    <Content Include="assets\images\about\icons\09.svg" />
+    <Content Include="assets\images\about\icons\10.svg" />
+    <Content Include="assets\images\about\icons\11.svg" />
+    <Content Include="assets\images\about\icons\12.svg" />
+    <Content Include="assets\images\about\icons\13.svg" />
+    <Content Include="assets\images\about\icons\14.svg" />
+    <Content Include="assets\images\about\icons\15.svg" />
+    <Content Include="assets\images\about\icons\16.svg" />
+    <Content Include="assets\images\about\icons\17.svg" />
+    <Content Include="assets\images\about\icons\18.svg" />
+    <Content Include="assets\images\about\icons\19.svg" />
+    <Content Include="assets\images\about\progress.svg" />
+    <Content Include="assets\images\about\shape-01.svg" />
+    <Content Include="assets\images\about\signature.png" />
+    <Content Include="assets\images\about\text-01.png" />
+    <Content Include="assets\images\achievement\01.svg" />
+    <Content Include="assets\images\award\01.svg" />
+    <Content Include="assets\images\award\02.svg" />
+    <Content Include="assets\images\award\03.svg" />
+    <Content Include="assets\images\award\04.svg" />
+    <Content Include="assets\images\award\05.svg" />
+    <Content Include="assets\images\award\06.svg" />
+    <Content Include="assets\images\award\07.svg" />
+    <Content Include="assets\images\award\08.svg" />
+    <Content Include="assets\images\award\09.svg" />
+    <Content Include="assets\images\award\10.svg" />
+    <Content Include="assets\images\award\11.svg" />
+    <Content Include="assets\images\award\12.svg" />
+    <Content Include="assets\images\award\award-bg.svg" />
+    <Content Include="assets\images\banner\01.png" />
+    <Content Include="assets\images\banner\01.svg" />
+    <Content Include="assets\images\banner\02.png" />
+    <Content Include="assets\images\banner\02.svg" />
+    <Content Include="assets\images\banner\03.png" />
+    <Content Include="assets\images\banner\03.svg" />
+    <Content Include="assets\images\banner\04.png" />
+    <Content Include="assets\images\banner\05.png" />
+    <Content Include="assets\images\banner\06.png" />
+    <Content Include="assets\images\banner\07.svg" />
+    <Content Include="assets\images\banner\08.svg" />
+    <Content Include="assets\images\banner\09.svg" />
+    <Content Include="assets\images\banner\10.svg" />
+    <Content Include="assets\images\banner\11.svg" />
+    <Content Include="assets\images\banner\12.svg" />
+    <Content Include="assets\images\banner\13.svg" />
+    <Content Include="assets\images\banner\30.png" />
+    <Content Include="assets\images\banner\avatar-01.svg" />
+    <Content Include="assets\images\banner\avatar-02.svg" />
+    <Content Include="assets\images\banner\bg-shape.svg" />
+    <Content Include="assets\images\banner\hero.png" />
+    <Content Include="assets\images\banner\line-bg.svg" />
+    <Content Include="assets\images\banner\play.svg" />
+    <Content Include="assets\images\banner\round-01.svg" />
+    <Content Include="assets\images\banner\shape\close.png" />
+    <Content Include="assets\images\banner\shopify.svg" />
+    <Content Include="assets\images\banner\slack.svg" />
+    <Content Include="assets\images\banner\star.svg" />
+    <Content Include="assets\images\banner\user.png" />
+    <Content Include="assets\images\blog\sm\01.jpg" />
+    <Content Include="assets\images\blog\sm\02.jpg" />
+    <Content Include="assets\images\blog\sm\03.jpg" />
+    <Content Include="assets\images\brand\01.svg" />
+    <Content Include="assets\images\brand\02.svg" />
+    <Content Include="assets\images\brand\03.svg" />
+    <Content Include="assets\images\brand\04.svg" />
+    <Content Include="assets\images\brand\05.svg" />
+    <Content Include="assets\images\brand\06.svg" />
+    <Content Include="assets\images\brand\07.svg" />
+    <Content Include="assets\images\brand\08.svg" />
+    <Content Include="assets\images\brand\09.svg" />
+    <Content Include="assets\images\brand\10.svg" />
+    <Content Include="assets\images\brand\11.svg" />
+    <Content Include="assets\images\brand\12.svg" />
+    <Content Include="assets\images\brand\13.svg" />
+    <Content Include="assets\images\brand\14.svg" />
+    <Content Include="assets\images\brand\15.svg" />
+    <Content Include="assets\images\brand\16.svg" />
+    <Content Include="assets\images\brand\17.svg" />
+    <Content Include="assets\images\brand\18.svg" />
+    <Content Include="assets\images\case\01.svg" />
+    <Content Include="assets\images\contact\icon\01.svg" />
+    <Content Include="assets\images\contact\icon\02.svg" />
+    <Content Include="assets\images\contact\icon\03.svg" />
+    <Content Include="assets\images\cta\shape-01.svg" />
+    <Content Include="assets\images\cta\shape-02.svg" />
+    <Content Include="assets\images\facts\01.png" />
+    <Content Include="assets\images\feature\01.svg" />
+    <Content Include="assets\images\feature\02.svg" />
+    <Content Include="assets\images\feature\03.svg" />
+    <Content Include="assets\images\feature\04.svg" />
+    <Content Include="assets\images\feature\05.svg" />
+    <Content Include="assets\images\feature\06.svg" />
+    <Content Include="assets\images\feature\07.svg" />
+    <Content Include="assets\images\feature\08.svg" />
+    <Content Include="assets\images\feature\09.svg" />
+    <Content Include="assets\images\feature\10.svg" />
+    <Content Include="assets\images\feature\11.svg" />
+    <Content Include="assets\images\feature\12.svg" />
+    <Content Include="assets\images\feature\13.svg" />
+    <Content Include="assets\images\feature\14.svg" />
+    <Content Include="assets\images\footer\01.svg" />
+    <Content Include="assets\images\header\01.svg" />
+    <Content Include="assets\images\header\02.svg" />
+    <Content Include="assets\images\header\line.svg" />
+    <Content Include="assets\images\logo\01.svg" />
+    <Content Include="assets\images\logo\02.svg" />
+    <Content Include="assets\images\logo\03.svg" />
+    <Content Include="assets\images\logo\04.svg" />
+    <Content Include="assets\images\logo\05.svg" />
+    <Content Include="assets\images\logo\06.svg" />
+    <Content Include="assets\images\logo\primeonx.svg" />
+    <Content Include="assets\images\mission\01.svg" />
+    <Content Include="assets\images\mission\02.svg" />
+    <Content Include="assets\images\mission\03.svg" />
+    <Content Include="assets\images\others\01.png" />
+    <Content Include="assets\images\others\04.svg" />
+    <Content Include="assets\images\others\facility-01.svg" />
+    <Content Include="assets\images\others\facility-02.svg" />
+    <Content Include="assets\images\others\facility-03.svg" />
+    <Content Include="assets\images\others\facility-04.svg" />
+    <Content Include="assets\images\others\facility-05.svg" />
+    <Content Include="assets\images\others\facility-06.svg" />
+    <Content Include="assets\images\others\facility-07.svg" />
+    <Content Include="assets\images\others\facility-08.svg" />
+    <Content Include="assets\images\others\facility-09.svg" />
+    <Content Include="assets\images\others\facility-10.svg" />
+    <Content Include="assets\images\others\facility-11.svg" />
+    <Content Include="assets\images\others\facility-12.svg" />
+    <Content Include="assets\images\others\facility-bg.svg" />
+    <Content Include="assets\images\others\icon\01.svg" />
+    <Content Include="assets\images\others\icon\02.svg" />
+    <Content Include="assets\images\others\icon\03.svg" />
+    <Content Include="assets\images\others\icon\04.svg" />
+    <Content Include="assets\images\others\icon\05.svg" />
+    <Content Include="assets\images\others\icon\06.svg" />
+    <Content Include="assets\images\others\icon\07.svg" />
+    <Content Include="assets\images\others\icon\08.svg" />
+    <Content Include="assets\images\others\icon\09.svg" />
+    <Content Include="assets\images\others\icon\10.svg" />
+    <Content Include="assets\images\others\icon\11.svg" />
+    <Content Include="assets\images\others\icon\12.svg" />
+    <Content Include="assets\images\others\icon\13.svg" />
+    <Content Include="assets\images\others\sign-03.svg" />
+    <Content Include="assets\images\others\sign-2.svg" />
+    <Content Include="assets\images\others\sign.svg" />
+    <Content Include="assets\images\others\star-02.svg" />
+    <Content Include="assets\images\others\star.svg" />
+    <Content Include="assets\images\others\stars-02.svg" />
+    <Content Include="assets\images\others\stars-03.svg" />
+    <Content Include="assets\images\others\stars.svg" />
+    <Content Include="assets\images\process\01.svg" />
+    <Content Include="assets\images\process\02.svg" />
+    <Content Include="assets\images\process\03.svg" />
+    <Content Include="assets\images\process\04.svg" />
+    <Content Include="assets\images\process\05.svg" />
+    <Content Include="assets\images\process\06.svg" />
+    <Content Include="assets\images\project\01.jpg" />
+    <Content Include="assets\images\project\02.jpg" />
+    <Content Include="assets\images\project\03.jpg" />
+    <Content Include="assets\images\project\04.jpg" />
+    <Content Include="assets\images\project\05.jpg" />
+    <Content Include="assets\images\project\06.jpg" />
+    <Content Include="assets\images\service\01.svg" />
+    <Content Include="assets\images\service\02.svg" />
+    <Content Include="assets\images\service\03.svg" />
+    <Content Include="assets\images\service\04.svg" />
+    <Content Include="assets\images\service\05.svg" />
+    <Content Include="assets\images\service\06.svg" />
+    <Content Include="assets\images\service\07.svg" />
+    <Content Include="assets\images\service\08.svg" />
+    <Content Include="assets\images\service\09.svg" />
+    <Content Include="assets\images\service\10.svg" />
+    <Content Include="assets\images\service\11.svg" />
+    <Content Include="assets\images\service\12.svg" />
+    <Content Include="assets\images\service\13.svg" />
+    <Content Include="assets\images\service\bg-1.svg" />
+    <Content Include="assets\images\testimonials\01.svg" />
+    <Content Include="assets\images\testimonials\02.svg" />
+    <Content Include="assets\images\testimonials\03.svg" />
+    <Content Include="assets\images\testimonials\04.svg" />
+    <Content Include="assets\images\testimonials\05.svg" />
+    <Content Include="assets\images\testimonials\06.svg" />
+    <Content Include="assets\images\testimonials\07.svg" />
+    <Content Include="assets\images\testimonials\08.svg" />
+    <Content Include="assets\images\testimonials\09.svg" />
+    <Content Include="assets\images\testimonials\10.svg" />
+    <Content Include="assets\images\testimonials\11.svg" />
+    <Content Include="assets\images\testimonials\12.svg" />
+    <Content Include="assets\images\testimonials\13.svg" />
+    <Content Include="assets\images\testimonials\14.svg" />
+    <Content Include="assets\images\testimonials\15.svg" />
+    <Content Include="assets\images\testimonials\avatars\01.svg" />
+    <Content Include="assets\images\testimonials\avatars\02.svg" />
+    <Content Include="assets\images\testimonials\avatars\03.svg" />
+    <Content Include="assets\images\testimonials\avatars\04.svg" />
+    <Content Include="assets\images\testimonials\avatars\05.svg" />
+    <Content Include="assets\images\testimonials\avatars\06.svg" />
+    <Content Include="assets\images\testimonials\avatars\07.svg" />
+    <Content Include="assets\images\testimonials\avatars\08.svg" />
+    <Content Include="assets\images\testimonials\avatars\09.svg" />
+    <Content Include="assets\images\testimonials\avatars\10.svg" />
+    <Content Include="assets\images\testimonials\quote.png" />
+    <Content Include="assets\images\testimonials\quote.svg" />
+    <Content Include="assets\images\testimonials\quote2.svg" />
+    <Content Include="assets\images\testimonials\quote3.svg" />
+    <Content Include="assets\images\why-choose\01.jpg" />
+    <Content Include="assets\images\why-choose\01.svg" />
+    <Content Include="assets\images\why-choose\02.jpg" />
+    <Content Include="assets\images\why-choose\02.svg" />
+    <Content Include="assets\images\why-choose\03.svg" />
+    <Content Include="assets\images\why-choose\04.svg" />
+    <Content Include="assets\images\why-choose\05.svg" />
+    <Content Include="assets\images\why-choose\06.svg" />
+    <Content Include="assets\images\why-choose\07.svg" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\plugins\aos.js" />
+    <Content Include="assets\js\plugins\contact.form copy.js" />
+    <Content Include="assets\js\plugins\contact.form.js" />
+    <Content Include="assets\js\plugins\gsap.js" />
+    <Content Include="assets\js\plugins\hover-revel.js" />
+    <Content Include="assets\js\plugins\jquery-appear.js" />
+    <Content Include="assets\js\plugins\jquery-slideNav.js" />
+    <Content Include="assets\js\plugins\jquery-ui.js" />
+    <Content Include="assets\js\plugins\jquery.js" />
+    <Content Include="assets\js\plugins\metismenu.js" />
+    <Content Include="assets\js\plugins\nice-select.js" />
+    <Content Include="assets\js\plugins\odometer.js" />
+    <Content Include="assets\js\plugins\popup.js" />
+    <Content Include="assets\js\plugins\scroll-trigger.js" />
+    <Content Include="assets\js\plugins\smooth-scroll.js" />
+    <Content Include="assets\js\plugins\split-text.js" />
+    <Content Include="assets\js\plugins\swip-img.js" />
+    <Content Include="assets\js\plugins\swiper.js" />
+    <Content Include="assets\js\plugins\text-plugins.js" />
+    <Content Include="assets\js\vendor\bootstrap.min.js" />
+    <Content Include="assets\js\vendor\info-box.js" />
+    <Content Include="assets\js\vendor\jquery.nav.js" />
+    <Content Include="assets\js\vendor\jqueryui.js" />
+    <Content Include="assets\js\vendor\map-content.js" />
+    <Content Include="assets\js\vendor\marker.js" />
+    <Content Include="assets\js\vendor\waw.js" />
+    <Content Include="assets\js\vendor\waypoint.js" />
+    <Content Include="blog-detail.aspx" />
+    <Content Include="blog.aspx" />
+    <Content Include="case-studies.aspx" />
+    <Content Include="contact-us.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="cookie-policy.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="digital-solutions.aspx" />
+    <Content Include="FAQ.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="assets\fonts\fa-brands-400.eot" />
+    <Content Include="assets\fonts\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\fa-brands-400.woff" />
+    <Content Include="assets\fonts\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\fa-duotone-900.eot" />
+    <Content Include="assets\fonts\fa-duotone-900.ttf" />
+    <Content Include="assets\fonts\fa-duotone-900.woff" />
+    <Content Include="assets\fonts\fa-duotone-900.woff2" />
+    <Content Include="assets\fonts\fa-light-300.eot" />
+    <Content Include="assets\fonts\fa-light-300.ttf" />
+    <Content Include="assets\fonts\fa-light-300.woff" />
+    <Content Include="assets\fonts\fa-light-300.woff2" />
+    <Content Include="assets\fonts\fa-regular-400.eot" />
+    <Content Include="assets\fonts\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\fa-regular-400.woff" />
+    <Content Include="assets\fonts\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\maps\style.css.map" />
+    <Content Include="assets\scss\default\_animations.scss" />
+    <Content Include="assets\scss\default\_forms.scss" />
+    <Content Include="assets\scss\default\_mixins.scss" />
+    <Content Include="assets\scss\default\_reset.scss" />
+    <Content Include="assets\scss\default\_shortcode.scss" />
+    <Content Include="assets\scss\default\_spacing.scss" />
+    <Content Include="assets\scss\default\_text-animation.scss" />
+    <Content Include="assets\scss\default\_typography.scss" />
+    <Content Include="assets\scss\default\_variables.scss" />
+    <Content Include="assets\scss\elements\_about.scss" />
+    <Content Include="assets\scss\elements\_accordion.scss" />
+    <Content Include="assets\scss\elements\_achivment.scss" />
+    <Content Include="assets\scss\elements\_award.scss" />
+    <Content Include="assets\scss\elements\_back-to-top.scss" />
+    <Content Include="assets\scss\elements\_banner.scss" />
+    <Content Include="assets\scss\elements\_blog.scss" />
+    <Content Include="assets\scss\elements\_brand.scss" />
+    <Content Include="assets\scss\elements\_buttons.scss" />
+    <Content Include="assets\scss\elements\_career.scss" />
+    <Content Include="assets\scss\elements\_case.scss" />
+    <Content Include="assets\scss\elements\_common.scss" />
+    <Content Include="assets\scss\elements\_consultation.scss" />
+    <Content Include="assets\scss\elements\_contact.scss" />
+    <Content Include="assets\scss\elements\_cta.scss" />
+    <Content Include="assets\scss\elements\_faq.scss" />
+    <Content Include="assets\scss\elements\_feature.scss" />
+    <Content Include="assets\scss\elements\_footer.scss" />
+    <Content Include="assets\scss\elements\_pricing.scss" />
+    <Content Include="assets\scss\elements\_process.scss" />
+    <Content Include="assets\scss\elements\_project.scss" />
+    <Content Include="assets\scss\elements\_responsive.scss" />
+    <Content Include="assets\scss\elements\_service.scss" />
+    <Content Include="assets\scss\elements\_software-company.scss" />
+    <Content Include="assets\scss\elements\_team.scss" />
+    <Content Include="assets\scss\elements\_testimonials.scss" />
+    <Content Include="assets\scss\elements\_video.scss" />
+    <Content Include="assets\scss\elements\_vision.scss" />
+    <Content Include="assets\scss\elements\_why-choose-us.scss" />
+    <Content Include="assets\scss\header\_dropdown.scss" />
+    <Content Include="assets\scss\header\_header.scss" />
+    <Content Include="assets\scss\header\_mobile-menu.scss" />
+    <Content Include="assets\scss\header\_nav.scss" />
+    <Content Include="assets\scss\style.scss" />
+    <Content Include="privacy-policy.aspx" />
+    <Content Include="projects.aspx" />
+    <Content Include="service-details.aspx" />
+    <Content Include="services.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="terms-of-service.aspx" />
+    <Content Include="test-smtp.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="why-choose-us.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="blog-detail.aspx.cs">
+      <DependentUpon>blog-detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog-detail.aspx.designer.cs">
+      <DependentUpon>blog-detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog.aspx.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog.aspx.designer.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="case-studies.aspx.cs">
+      <DependentUpon>case-studies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="case-studies.aspx.designer.cs">
+      <DependentUpon>case-studies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact-us.aspx.cs">
+      <DependentUpon>contact-us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact-us.aspx.designer.cs">
+      <DependentUpon>contact-us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cookie-policy.aspx.cs">
+      <DependentUpon>cookie-policy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cookie-policy.aspx.designer.cs">
+      <DependentUpon>cookie-policy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="digital-solutions.aspx.cs">
+      <DependentUpon>digital-solutions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="digital-solutions.aspx.designer.cs">
+      <DependentUpon>digital-solutions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="privacy-policy.aspx.cs">
+      <DependentUpon>privacy-policy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="privacy-policy.aspx.designer.cs">
+      <DependentUpon>privacy-policy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="projects.aspx.cs">
+      <DependentUpon>projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="projects.aspx.designer.cs">
+      <DependentUpon>projects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="service-details.aspx.cs">
+      <DependentUpon>service-details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="service-details.aspx.designer.cs">
+      <DependentUpon>service-details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="services.aspx.cs">
+      <DependentUpon>services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services.aspx.designer.cs">
+      <DependentUpon>services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="terms-of-service.aspx.cs">
+      <DependentUpon>terms-of-service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="terms-of-service.aspx.designer.cs">
+      <DependentUpon>terms-of-service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test-smtp.aspx.cs">
+      <DependentUpon>test-smtp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test-smtp.aspx.designer.cs">
+      <DependentUpon>test-smtp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="why-choose-us.aspx.cs">
+      <DependentUpon>why-choose-us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="why-choose-us.aspx.designer.cs">
+      <DependentUpon>why-choose-us.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\images\about\01.webp" />
+    <Content Include="assets\images\about\02.webp" />
+    <Content Include="assets\images\about\03.webp" />
+    <Content Include="assets\images\about\04.webp" />
+    <Content Include="assets\images\about\05.webp" />
+    <Content Include="assets\images\about\06.webp" />
+    <Content Include="assets\images\about\07.webp" />
+    <Content Include="assets\images\about\08.webp" />
+    <Content Include="assets\images\about\10.webp" />
+    <Content Include="assets\images\about\11.webp" />
+    <Content Include="assets\images\about\12.webp" />
+    <Content Include="assets\images\about\13.webp" />
+    <Content Include="assets\images\about\14.webp" />
+    <Content Include="assets\images\about\15.webp" />
+    <Content Include="assets\images\about\16.webp" />
+    <Content Include="assets\images\about\17.webp" />
+    <Content Include="assets\images\about\18.webp" />
+    <Content Include="assets\images\about\19.webp" />
+    <Content Include="assets\images\about\20.webp" />
+    <Content Include="assets\images\about\21.webp" />
+    <Content Include="assets\images\about\22.webp" />
+    <Content Include="assets\images\about\23.webp" />
+    <Content Include="assets\images\about\24.webp" />
+    <Content Include="assets\images\about\icons\01.webp" />
+    <Content Include="assets\images\about\icons\02.webp" />
+    <Content Include="assets\images\about\icons\03.webp" />
+    <Content Include="assets\images\about\icons\04.webp" />
+    <Content Include="assets\images\about\icons\05.webp" />
+    <Content Include="assets\images\about\text-01.webp" />
+    <Content Include="assets\images\achievement\01.webp" />
+    <Content Include="assets\images\award\01.webp" />
+    <Content Include="assets\images\award\02.webp" />
+    <Content Include="assets\images\award\03.webp" />
+    <Content Include="assets\images\award\04.webp" />
+    <Content Include="assets\images\award\05.webp" />
+    <Content Include="assets\images\award\06.webp" />
+    <Content Include="assets\images\award\07.webp" />
+    <Content Include="assets\images\award\08.webp" />
+    <Content Include="assets\images\award\09.webp" />
+    <Content Include="assets\images\award\10.webp" />
+    <Content Include="assets\images\award\11.webp" />
+    <Content Include="assets\images\banner\01.webp" />
+    <Content Include="assets\images\banner\02.webp" />
+    <Content Include="assets\images\banner\03.webp" />
+    <Content Include="assets\images\banner\04.webp" />
+    <Content Include="assets\images\banner\05.webp" />
+    <Content Include="assets\images\banner\06.webp" />
+    <Content Include="assets\images\banner\07.webp" />
+    <Content Include="assets\images\banner\08.webp" />
+    <Content Include="assets\images\banner\09.webp" />
+    <Content Include="assets\images\banner\10.webp" />
+    <Content Include="assets\images\banner\11.webp" />
+    <Content Include="assets\images\banner\12.webp" />
+    <Content Include="assets\images\banner\13.webp" />
+    <Content Include="assets\images\banner\14.webp" />
+    <Content Include="assets\images\banner\15.webp" />
+    <Content Include="assets\images\banner\16.webp" />
+    <Content Include="assets\images\banner\17.webp" />
+    <Content Include="assets\images\banner\24.webp" />
+    <Content Include="assets\images\banner\25.webp" />
+    <Content Include="assets\images\banner\26.webp" />
+    <Content Include="assets\images\banner\27.webp" />
+    <Content Include="assets\images\banner\28.webp" />
+    <Content Include="assets\images\banner\29.webp" />
+    <Content Include="assets\images\banner\30.webp" />
+    <Content Include="assets\images\banner\31.webp" />
+    <Content Include="assets\images\banner\32.webp" />
+    <Content Include="assets\images\banner\33.webp" />
+    <Content Include="assets\images\banner\breadcrumb-01.webp" />
+    <Content Include="assets\images\banner\hero.webp" />
+    <Content Include="assets\images\blog\01.webp" />
+    <Content Include="assets\images\blog\02.webp" />
+    <Content Include="assets\images\blog\03.webp" />
+    <Content Include="assets\images\blog\04.webp" />
+    <Content Include="assets\images\blog\05.webp" />
+    <Content Include="assets\images\blog\06.webp" />
+    <Content Include="assets\images\blog\07.webp" />
+    <Content Include="assets\images\blog\08.webp" />
+    <Content Include="assets\images\blog\09.webp" />
+    <Content Include="assets\images\blog\10.webp" />
+    <Content Include="assets\images\blog\11.webp" />
+    <Content Include="assets\images\blog\12.webp" />
+    <Content Include="assets\images\blog\13.webp" />
+    <Content Include="assets\images\blog\14.webp" />
+    <Content Include="assets\images\brand\07.webp" />
+    <Content Include="assets\images\brand\08.webp" />
+    <Content Include="assets\images\case\01.webp" />
+    <Content Include="assets\images\case\02.webp" />
+    <Content Include="assets\images\case\03.webp" />
+    <Content Include="assets\images\case\04.webp" />
+    <Content Include="assets\images\case\05.webp" />
+    <Content Include="assets\images\case\06.webp" />
+    <Content Include="assets\images\case\07.webp" />
+    <Content Include="assets\images\case\08.webp" />
+    <Content Include="assets\images\case\09.webp" />
+    <Content Include="assets\images\consultancy\01.webp" />
+    <Content Include="assets\images\consultancy\02.webp" />
+    <Content Include="assets\images\consultancy\03.webp" />
+    <Content Include="assets\images\consultancy\04.webp" />
+    <Content Include="assets\images\consultancy\05.webp" />
+    <Content Include="assets\images\consultancy\06.webp" />
+    <Content Include="assets\images\facts\01.webp" />
+    <Content Include="assets\images\faq\01.webp" />
+    <Content Include="assets\images\feature\01.webp" />
+    <Content Include="assets\images\feature\02.webp" />
+    <Content Include="assets\images\feature\03.webp" />
+    <Content Include="assets\images\feature\04.webp" />
+    <Content Include="assets\images\feature\05.webp" />
+    <Content Include="assets\images\feature\06.webp" />
+    <Content Include="assets\images\feature\07.webp" />
+    <Content Include="assets\images\feature\08.webp" />
+    <Content Include="assets\images\feature\09.webp" />
+    <Content Include="assets\images\feature\10.webp" />
+    <Content Include="assets\images\feature\11.webp" />
+    <Content Include="assets\images\feature\15.webp" />
+    <Content Include="assets\images\feature\16.webp" />
+    <Content Include="assets\images\feature\17.webp" />
+    <Content Include="assets\images\feature\18.webp" />
+    <Content Include="assets\images\feature\19.webp" />
+    <Content Include="assets\images\others\01.webp" />
+    <Content Include="assets\images\others\02.webp" />
+    <Content Include="assets\images\others\03.webp" />
+    <Content Include="assets\images\others\04.webp" />
+    <Content Include="assets\images\others\05.webp" />
+    <Content Include="assets\images\others\06.webp" />
+    <Content Include="assets\images\others\07.webp" />
+    <Content Include="assets\images\others\board.webp" />
+    <Content Include="assets\images\partner\01.webp" />
+    <Content Include="assets\images\partner\02.webp" />
+    <Content Include="assets\images\partner\03.webp" />
+    <Content Include="assets\images\process\01.webp" />
+    <Content Include="assets\images\process\02.webp" />
+    <Content Include="assets\images\process\03.webp" />
+    <Content Include="assets\images\process\04.webp" />
+    <Content Include="assets\images\process\06.webp" />
+    <Content Include="assets\images\project\01.webp" />
+    <Content Include="assets\images\project\02.webp" />
+    <Content Include="assets\images\project\07.webp" />
+    <Content Include="assets\images\project\08.webp" />
+    <Content Include="assets\images\project\09.webp" />
+    <Content Include="assets\images\project\10.webp" />
+    <Content Include="assets\images\project\11.webp" />
+    <Content Include="assets\images\project\12.webp" />
+    <Content Include="assets\images\project\13.webp" />
+    <Content Include="assets\images\project\14.webp" />
+    <Content Include="assets\images\project\15.webp" />
+    <Content Include="assets\images\project\16.webp" />
+    <Content Include="assets\images\project\17.webp" />
+    <Content Include="assets\images\project\18.webp" />
+    <Content Include="assets\images\project\19.webp" />
+    <Content Include="assets\images\project\20.webp" />
+    <Content Include="assets\images\project\21.webp" />
+    <Content Include="assets\images\project\22.webp" />
+    <Content Include="assets\images\project\23.webp" />
+    <Content Include="assets\images\project\24.webp" />
+    <Content Include="assets\images\project\25.webp" />
+    <Content Include="assets\images\project\26.webp" />
+    <Content Include="assets\images\project\27.webp" />
+    <Content Include="assets\images\project\28.webp" />
+    <Content Include="assets\images\project\29.webp" />
+    <Content Include="assets\images\project\30.webp" />
+    <Content Include="assets\images\project\31.webp" />
+    <Content Include="assets\images\project\32.webp" />
+    <Content Include="assets\images\project\33.webp" />
+    <Content Include="assets\images\project\34.webp" />
+    <Content Include="assets\images\project\35.webp" />
+    <Content Include="assets\images\service\01.webp" />
+    <Content Include="assets\images\service\02.webp" />
+    <Content Include="assets\images\service\03.webp" />
+    <Content Include="assets\images\service\04.webp" />
+    <Content Include="assets\images\service\05.webp" />
+    <Content Include="assets\images\service\06.webp" />
+    <Content Include="assets\images\service\13.webp" />
+    <Content Include="assets\images\service\14.webp" />
+    <Content Include="assets\images\service\15.webp" />
+    <Content Include="assets\images\service\16.webp" />
+    <Content Include="assets\images\service\17.webp" />
+    <Content Include="assets\images\service\18.webp" />
+    <Content Include="assets\images\service\19.webp" />
+    <Content Include="assets\images\service\20.webp" />
+    <Content Include="assets\images\service\21.webp" />
+    <Content Include="assets\images\service\22.webp" />
+    <Content Include="assets\images\service\23.webp" />
+    <Content Include="assets\images\service\24.webp" />
+    <Content Include="assets\images\service\25.webp" />
+    <Content Include="assets\images\service\26.webp" />
+    <Content Include="assets\images\service\27.webp" />
+    <Content Include="assets\images\service\28.webp" />
+    <Content Include="assets\images\service\29.webp" />
+    <Content Include="assets\images\service\service-card-bg.webp" />
+    <Content Include="assets\images\testimonials\01.webp" />
+    <Content Include="assets\images\testimonials\02.webp" />
+    <Content Include="assets\images\testimonials\03.webp" />
+    <Content Include="assets\images\testimonials\04.webp" />
+    <Content Include="assets\images\testimonials\05.webp" />
+    <Content Include="assets\images\testimonials\06.webp" />
+    <Content Include="assets\images\testimonials\07.webp" />
+    <Content Include="assets\images\testimonials\08.webp" />
+    <Content Include="assets\images\testimonials\09.webp" />
+    <Content Include="assets\images\testimonials\10.webp" />
+    <Content Include="assets\images\testimonials\11.webp" />
+    <Content Include="assets\images\testimonials\12.webp" />
+    <Content Include="assets\images\testimonials\bg_map.webp" />
+    <Content Include="assets\images\why-choose\01.webp" />
+    <Content Include="assets\images\why-choose\02.webp" />
+    <Content Include="assets\images\why-choose\03.webp" />
+    <Content Include="assets\images\why-choose\04.webp" />
+    <Content Include="assets\images\why-choose\05.webp" />
+    <Content Include="assets\images\why-choose\06.webp" />
+    <Content Include="assets\images\why-choose\07.webp" />
+    <Content Include="assets\images\why-choose\08.webp" />
+    <Content Include="assets\images\why-choose\09.webp" />
+    <Content Include="assets\images\why-choose\10.webp" />
+    <Content Include="assets\images\cta\01.webp" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49914</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44335/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

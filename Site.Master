@@ -1,0 +1,372 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="primeonx_global.SiteMaster" %> 
+
+<!DOCTYPE html>
+<html lang="<%: GetCurrentLang() %>">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO CORE -->
+    <title><%: GetSeoTitle() %></title>
+    <meta name="description" content="<%: GetMetaDescription() %>" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="<%: GetCanonicalUrl() %>" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Primeonx" />
+    <meta property="og:type" content="<%: GetOgType() %>" />
+    <meta property="og:title" content="<%: GetOgTitle() %>" />
+    <meta property="og:description" content="<%: GetMetaDescription() %>" />
+    <meta property="og:url" content="<%: GetCanonicalUrl() %>" />
+    <meta property="og:image" content="<%: GetOgImageUrl() %>" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%: GetOgTitle() %>" />
+    <meta name="twitter:description" content="<%: GetMetaDescription() %>" />
+    <meta name="twitter:image" content="<%: GetOgImageUrl() %>" />
+
+    <!-- Fav -->
+    <link rel="shortcut icon" type="image/x-icon" href="<%: ResolveUrl("~/assets/images/fav.png") %>" />
+
+    <!-- Perf micro fixes -->
+    <style>
+        img { height: auto; }
+        @font-face { font-display: swap; }
+    </style>
+
+    <!-- ✅ hreflang -->
+    <asp:Literal ID="litHreflang" runat="server" EnableViewState="false" />
+
+    <!-- CSS (non-blocking preload) -->
+    <link rel="preload" as="style" href="<%: ResolveUrl("~/assets/css/vendor/bootstrap.min.css") %>" />
+    <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/vendor/bootstrap.min.css") %>" media="print" onload="this.media='all'">
+
+    <link rel="preload" as="style" href="<%: ResolveUrl("~/assets/css/plugins/fontawesome.css") %>" />
+    <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/fontawesome.css") %>" media="print" onload="this.media='all'">
+
+    <link rel="preload" as="style" href="<%: ResolveUrl("~/assets/css/plugins/swiper.css") %>" />
+    <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/swiper.css") %>" media="print" onload="this.media='all'">
+
+    <link rel="preload" as="style" href="<%: ResolveUrl("~/assets/css/plugins/metismenu.css") %>" />
+    <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/metismenu.css") %>" media="print" onload="this.media='all'">
+
+    <link rel="preload" as="style" href="<%: ResolveUrl("~/assets/css/plugins/magnifying-popup.css") %>" />
+    <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/magnifying-popup.css") %>" media="print" onload="this.media='all'">
+
+    <link rel="preload" as="style" href="<%: ResolveUrl("~/assets/css/plugins/odometer.css") %>" />
+    <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/odometer.css") %>" media="print" onload="this.media='all'">
+
+    <link rel="preload" as="style" href="<%: ResolveUrl("~/assets/css/style.css") %>" />
+    <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/style.css") %>" media="print" onload="this.media='all'">
+
+    <noscript>
+        <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/vendor/bootstrap.min.css") %>" />
+        <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/fontawesome.css") %>" />
+        <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/swiper.css") %>" />
+        <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/metismenu.css") %>" />
+        <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/magnifying-popup.css") %>" />
+        <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/plugins/odometer.css") %>" />
+        <link rel="stylesheet" href="<%: ResolveUrl("~/assets/css/style.css") %>" />
+    </noscript>
+
+    <!-- Sayfa bazlı extra head -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+
+    <!-- ✅ JSON-LD (code-behind basacak) -->
+    <asp:Literal ID="litJsonLd" runat="server" EnableViewState="false" />
+</head>
+
+<body class="demo-data-science">
+<form runat="server">
+    <asp:ScriptManager runat="server" EnablePartialRendering="false" />
+
+    <header class="header-one header-relative header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-wrapper-main">
+                        <!-- Logo -->
+                        <div class="logo-area">
+                            <a href="<%: L("") %>">
+                                <img src="<%: ResolveUrl("~/assets/images/logo/primeonx.svg") %>"
+                                     alt="Primeonx Logo"
+                                     width="180" height="48"
+                                     decoding="async"
+                                     fetchpriority="high">
+                            </a>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="nav-area">
+                            <ul class="">
+                                <li class="main-nav"><a href="<%: L("") %>"><%: T("Home", "Ana Sayfa") %></a></li>
+
+                                <li class="main-nav has-dropdown">
+                                    <a href="#"><%: T("About", "Hakkımızda") %></a>
+                                    <ul class="submenu parent-nav">
+                                        <li><a href="<%: L("about") %>"><%: T("About", "Hakkımızda") %></a></li>
+                                        <li><a href="<%: L("faq") %>">FAQ</a></li>
+                                        <li><a href="<%: L("why-choose-us") %>"><%: T("Why Choose Us", "Neden Biz") %></a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="main-nav has-dropdown">
+                                    <a href="<%: L("services") %>"><%: T("Services", "Hizmetler") %></a>
+                                    <ul class="submenu parent-nav">
+                                        <li><a href="<%: L("services") %>">SEO</a></li>
+                                        <li><a href="<%: L("services") %>"><%: T("Marketing", "Pazarlama") %></a></li>
+                                        <li><a href="<%: L("services") %>"><%: T("Software", "Yazılım") %></a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="main-nav"><a href="<%: L("projects") %>"><%: T("Projects", "Projeler") %></a></li>
+                                <li class="main-nav"><a href="<%: L("case-studies") %>"><%: T("Case Studies", "Vaka Çalışmaları") %></a></li>
+                                <li class="main-nav"><a href="<%: L("blog") %>"><%: T("Blog", "Blog") %></a></li>
+                                <li class="main-nav"><a href="<%: L("contact") %>"><%: T("Contact", "İletişim") %></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Right buttons -->
+                        <div class="button-wrapper-flex">
+                            <div class="select-area language">
+                                <ul>
+                                    <li class="main-nav has-dropdown">
+                                        <img src="<%: ResolveUrl("~/assets/images/header/01.svg") %>" alt=""
+                                             width="18" height="18" decoding="async">
+                                        <a href="#"><%: GetCurrentLang().ToUpperInvariant() %></a>
+                                        <ul class="submenu parent-nav">
+                                            <li><a href="<%: SwitchLangUrl("en") %>">EN</a></li>
+                                            <li><a href="<%: SwitchLangUrl("tr") %>">TR</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="<%: L("contact") %>" class="rts-btn btn-primary with-arrow">
+                                <%: T("Get Started", "Başlayalım") %> <i class="fa-regular fa-arrow-up up-right"></i>
+                            </a>
+
+                            <div class="menu-btn-toggle white">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect width="20" height="2" fill="#1F1F25"></rect>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+    <!-- Footer -->
+    <div class="rts-footer-one pt--100 bg_light">
+        <div class="container pb--80 ">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="left-wiget">
+                        <a class="logo" href="<%: L("") %>">
+                            <img src="<%: ResolveUrl("~/assets/images/logo/primeonx.svg") %>" alt="Primeonx logo"
+                                 width="180" height="48" decoding="async" loading="lazy">
+                        </a>
+
+                        <p class="disc">
+                            <%: T("We build SEO-first digital systems designed for measurable growth and long-term performance.",
+                                 "Ölçülebilir büyüme ve sürdürülebilir performans için SEO odaklı dijital sistemler inşa ediyoruz.") %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="offset-lg-1 col-lg-8 mt_md--50 mt_sm--50">
+                    <div class="footer-wized-wrapper">
+
+                        <div class="single">
+                            <h6 class="title"><%: T("Company", "Şirket") %></h6>
+                            <ul>
+                                <li><a href="<%: L("about") %>"><%: T("About", "Hakkımızda") %></a></li>
+                                <li><a href="<%: L("why-choose-us") %>"><%: T("Why Choose Us", "Neden Biz") %></a></li>
+                                <li><a href="<%: L("projects") %>"><%: T("Projects", "Projeler") %></a></li>
+                                <li><a href="<%: L("case-studies") %>"><%: T("Case Studies", "Vaka Çalışmaları") %></a></li>
+                                <li><a href="<%: L("contact") %>"><%: T("Contact", "İletişim") %></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="single">
+                            <h6 class="title"><%: T("Services", "Hizmetler") %></h6>
+                            <ul>
+                                <li><a href="<%: L("services") %>">SEO</a></li>
+                                <li><a href="<%: L("services") %>"><%: T("Marketing", "Pazarlama") %></a></li>
+                                <li><a href="<%: L("services") %>"><%: T("Software", "Yazılım") %></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="single">
+                            <h6 class="title"><%: T("Resources", "Kaynaklar") %></h6>
+                            <ul>
+                                <li><a href="<%: L("faq") %>">FAQ</a></li>
+                                <li><a href="<%: L("blog") %>"><%: T("Blog", "Blog") %></a></li>
+                                <li class="mt--10"><strong><%: T("Legal", "Yasal") %></strong></li>
+                                <li><a href="<%: L("privacy-policy") %>"><%: T("Privacy Policy", "Gizlilik Politikası") %></a></li>
+                                <li><a href="<%: L("terms-of-service") %>"><%: T("Terms of Service", "Kullanım Şartları") %></a></li>
+                                <li><a href="<%: L("cookie-policy") %>"><%: T("Cookie Policy", "Çerez Politikası") %></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="single">
+                            <h6 class="title"><%: T("Social", "Sosyal") %></h6>
+                            <ul>
+                                <li><span><%: T("Remote / Worldwide", "Remote / Dünya Geneli") %></span></li>
+                                <li class="mt--10"><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+                                <li><a href="https://www.github.com/" target="_blank" rel="noopener">GitHub</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-1">
+                            <p class="disc">
+                                Copyright <script>document.write(new Date().getFullYear())</script>. All Rights Reserved.
+                            </p>
+                            <ul>
+                                <li><a href="<%: L("about") %>"><%: T("About", "Hakkımızda") %></a></li>
+                                <li><a href="<%: L("projects") %>"><%: T("Projects", "Projeler") %></a></li>
+                                <li><a href="<%: L("blog") %>"><%: T("Blog", "Blog") %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side bar + mobile menu -->
+    <div id="side-bar" class="side-bar header-two">
+        <div class="rts-sidebar-menu-desktop">
+            <div class="logo-area">
+                <a class="logo" href="<%: L("") %>">
+                    <img src="<%: ResolveUrl("~/assets/images/logo/primeonx.svg") %>" alt=""
+                         width="180" height="48" decoding="async" loading="lazy">
+                </a>
+                <button class="close-icon-menu" aria-label="Close menu"><i class="far fa-times"></i></button>
+            </div>
+
+            <div class="body d-none d-xl-block">
+                <div class="about-us">
+                    <h4><%: T("About Us", "Hakkımızda") %></h4>
+                    <p><%: T("We build SEO-first web experiences and marketing systems designed for measurable growth.",
+                             "Ölçülebilir büyüme için SEO odaklı web deneyimleri ve pazarlama sistemleri kuruyoruz.") %></p>
+                </div>
+
+                <div class="menu-list">
+                    <h4><%: T("Useful Links", "Faydalı Linkler") %></h4>
+                    <ul>
+                        <li><a href="<%: L("about") %>"><%: T("About", "Hakkımızda") %></a></li>
+                        <li><a href="<%: L("projects") %>"><%: T("Projects", "Projeler") %></a></li>
+                        <li><a href="<%: L("case-studies") %>"><%: T("Case Studies", "Vaka Çalışmaları") %></a></li>
+                        <li><a href="<%: L("blog") %>"><%: T("Blog", "Blog") %></a></li>
+                        <li><a href="<%: L("faq") %>">FAQ</a></li>
+                        <li><a href="<%: L("contact") %>"><%: T("Contact", "İletişim") %></a></li>
+                    </ul>
+                </div>
+
+                <div class="get-in-touch">
+                    <h4><%: T("Get In Touch", "İletişime Geç") %></h4>
+                    <div class="wrapper">
+                        <div class="single">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hello@primeonx.com">hello@primeonx.com</a>
+                        </div>
+                        <div class="single">
+                            <i class="fas fa-globe"></i>
+                            <a href="<%: L("") %>">primeonx.com</a>
+                        </div>
+                    </div>
+
+                    <div class="social-wrapper-two menu">
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.github.com/" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu-main d-block d-xl-none">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li><a href="<%: L("") %>" class="main"><%: T("Home", "Ana Sayfa") %></a></li>
+                    <li><a href="<%: L("about") %>" class="main"><%: T("About", "Hakkımızda") %></a></li>
+                    <li><a href="<%: L("projects") %>" class="main"><%: T("Projects", "Projeler") %></a></li>
+                    <li><a href="<%: L("case-studies") %>" class="main"><%: T("Case Studies", "Vaka Çalışmaları") %></a></li>
+                    <li><a href="<%: L("blog") %>" class="main"><%: T("Blog", "Blog") %></a></li>
+                    <li><a href="<%: L("contact") %>" class="main"><%: T("Contact", "İletişim") %></a></li>
+                </ul>
+            </nav>
+
+            <div class="rts-social-border-area right-sidebar mt--50">
+                <ul>
+                    <li><a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="https://www.github.com/" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOADER & PROGRESS -->
+    <div id="anywhere-home" class=""></div>
+
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102" aria-hidden="true">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                  style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+
+<!-- Site.master (EN ALTTAKİ SCRIPT BLOĞUNU BUNUNLA DEĞİŞTİR) -->
+
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/jquery.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/jquery-appear.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/odometer.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/gsap.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/split-text.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/scroll-trigger.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/smooth-scroll.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/metismenu.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/popup.js") %>"></script>
+
+<!-- ✅ HER SAYFADA YÜKLE -->
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/contact.form.js") %>"></script>
+
+<script defer src="<%: ResolveUrl("~/assets/js/vendor/bootstrap.min.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/plugins/swiper.js") %>"></script>
+<script defer src="<%: ResolveUrl("~/assets/js/main.js") %>"></script>
+
+
+</form>
+</body>
+</html>
